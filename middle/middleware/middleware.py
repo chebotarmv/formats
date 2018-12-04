@@ -21,7 +21,7 @@ def simple_middleware(get_response):
             a = resp.decode('ASCII')
             root = ElementTree.fromstring(a)
             element = ElementTree.dump(root)
-            return HttpResponse(element, content_type='application/xml')
+            return HttpResponse(element)
 
 
         elif request.GET['type'] == 'str':
